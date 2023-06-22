@@ -1,0 +1,38 @@
+.movie-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: $l-size;
+  cursor: pointer;
+  @media screen and (min-width: $desktop-breakpoint) {
+    margin-bottom: 0;
+  }
+}
+
+.movie-item img {
+  height: 75%;
+}
+
+.movie-item p {
+  text-align: center;
+  color: $white;
+}
+
+.movie-item:hover p {
+  color: $bloody;
+}
+
+.movies-list {
+  padding: $m-size 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (min-width: $desktop-breakpoint) {
+    padding: $l-size 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}

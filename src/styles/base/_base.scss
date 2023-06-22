@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  background-color: $black;
+}
+
+body {
+  color: $red;
+  font-size: $m-size;
+  line-height: 1.6;
+  width: 100vw;
+}
+
+#app {
+  background-color: $black;
+  font-family: 'Bitter', serif;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Bitter', serif;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.is-active {
+  font-weight: bold;
+}

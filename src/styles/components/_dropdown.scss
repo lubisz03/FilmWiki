@@ -1,0 +1,77 @@
+.dropdown-button {
+  display: inline-block;
+  border: none;
+  background: none;
+  position: relative;
+  cursor: pointer;
+  background-color: $black;
+  color: $red;
+}
+
+.dropdown-button:hover {
+  color: $bloody;
+}
+
+.dropdown-button.sort {
+  padding: 0 $m-size;
+  @media screen and (min-width: $desktop-breakpoint) {
+    padding: 0 $l-size;
+  }
+}
+
+.dropdown-button.sort:hover {
+  color: $bloody;
+}
+
+.dropdown-header {
+  font-size: $l-size;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0 $s-size;
+  margin: 0;
+  display: none;
+  visibility: hidden;
+}
+
+.dropdown-menu ul.open {
+  background-color: $black;
+  display: block;
+  visibility: visible;
+  position: absolute;
+  z-index: 1;
+  border-radius: 1em;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  @media screen and (min-width: $desktop-breakpoint) {
+    width: fit-content;
+    left: auto;
+    right: auto;
+  }
+}
+
+.dropdown-menu.sort ul.open {
+  padding: 0 $m-size;
+  @media screen and (min-width: $desktop-breakpoint) {
+    padding: 0 $l-size;
+  }
+}
+
+.dropdown-menu ul li {
+  margin: $m-size 0;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  color: $red;
+  @media screen and (min-width: $desktop-breakpoint) {
+    margin: $s-size 0;
+  }
+}
+
+.dropdown-menu ul.open li:hover {
+  color: $bloody;
+}

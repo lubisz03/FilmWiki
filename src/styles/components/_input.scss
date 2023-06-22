@@ -1,0 +1,22 @@
+.text-input {
+  border-radius: 1em;
+  outline: none;
+  border: none;
+  padding: $xs-size $s-size;
+  width: 100%;
+}
+
+.text-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-search:hover {
+  color: $red;
+}
+
+.text-search button:hover {
+  color: $bloody;
+}
