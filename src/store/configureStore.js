@@ -8,6 +8,7 @@ import filtersReducer from '../reducers/filters';
 import authReducer from '../reducers/auth';
 import dropdownReducer from '../reducers/dropdown';
 import loadingReducer from '../reducers/loading';
+import modalReducer from '../reducers/modal';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -23,6 +24,7 @@ export default () => {
       auth: authReducer,
       dropdown: dropdownReducer,
       loading: loadingReducer,
+      modal: modalReducer,
     }),
     composeEnhancers(applyMiddleware(thunk))
   );

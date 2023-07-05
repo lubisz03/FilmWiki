@@ -3,21 +3,25 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  height: 90vh;
+  width: 100%;
   margin-bottom: $l-size;
   cursor: pointer;
   @media screen and (min-width: $desktop-breakpoint) {
     margin-bottom: 0;
+    height: 100%;
   }
 }
 
 .movie-item img {
-  height: 75%;
+  height: 85%;
+  width: 100%;
 }
 
 .movie-item p {
   text-align: center;
   color: $white;
+  margin-top: $xs-size;
 }
 
 .movie-item:hover p {
@@ -25,13 +29,13 @@
 }
 
 .movies-list {
-  padding: $m-size 0;
+  padding: $m-size 0 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   @media screen and (min-width: $desktop-breakpoint) {
-    padding: $l-size 0;
+    padding: $l-size 0 0;
     display: grid;
     grid-template-columns: auto auto auto;
   }

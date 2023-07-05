@@ -18,11 +18,20 @@ import GenrePage from '../components/GenrePage';
 import PrivateRoute from './PrivateRoute';
 import MoviesFilters from '../components/MoviesFilters';
 import TextSearchMoviesPage from '../components/TextSearchMoviesPage';
+import WatchedPage from '../components/WatchedPage';
+import WishlistPage from '../components/WishlistPage';
+import Details from '../components/Details';
+import { closeModal } from '../actions/modal';
 
 const AppRouter = (props) => (
   <BrowserRouter>
     <div>
       <Header />
+      <Details
+        isOpen={props.isOpen}
+        onClose={() => props.dispatch(closeModal())}
+        data={props.modalData}
+      />
       <Routes>
         <Route
           path='/'
@@ -78,7 +87,11 @@ const AppRouter = (props) => (
           path='/wishlist'
           element={
             <PrivateRoute>
-              <p>hwdp</p>
+              <div className='content-container body'>
+                <h1 className='page-title'>Wishlist</h1>
+                <MoviesFilters />
+                <WishlistPage />
+              </div>
             </PrivateRoute>
           }
         />
@@ -86,7 +99,11 @@ const AppRouter = (props) => (
           path='/watched'
           element={
             <PrivateRoute>
-              <p>hwdp2</p>
+              <div className='content-container body'>
+                <h1 className='page-title'>Watched Movies</h1>
+                <MoviesFilters />
+                <WatchedPage />
+              </div>
             </PrivateRoute>
           }
         />
@@ -99,6 +116,8 @@ const mapStateToProps = (state) => {
   return {
     textFilter: state.filters.text,
     genre: state.filters.genre,
+    isOpen: state.modal.isOpen,
+    modalData: state.modal.data,
   };
 };
 

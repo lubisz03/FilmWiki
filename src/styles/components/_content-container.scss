@@ -5,14 +5,14 @@
 }
 
 .content-container.body {
-  padding: $l-size 0;
+  padding: $l-size 0 0;
 }
 
 .content-container h1.page-title {
   color: $red;
   text-align: center;
   margin: 0;
-  margin-bottom: $l-size;
+  margin-bottom: $m-size;
   @media screen and (min-width: $desktop-breakpoint) {
     margin-bottom: $l-size;
   }

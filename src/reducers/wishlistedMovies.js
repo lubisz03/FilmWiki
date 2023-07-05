@@ -8,7 +8,7 @@ const wishlistedMoviesReducer = (
     case 'ADD_WISHLISTED_MOVIE':
       return [...state, action.movie];
     case 'REMOVE_WISHLISTED_MOVIE':
-      return state.filter(({ name }) => name != name);
+      return state.filter(({ title }) => title != action.title);
     case 'SET_WISHLISTED_MOVIES':
       return action.movies;
     default:

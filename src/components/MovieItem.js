@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addWatchedMovie } from '../actions/watchedMovies';
+import { startOpenModal } from '../actions/modal';
 
 const MovieItem = (props) => {
   return (
-    <div className='content-container movie-item'>
+    <div
+      className='content-container movie-item'
+      onClick={() => props.dispatch(startOpenModal(props.movie))}>
       <img
         src={`${process.env.REACT_APP_TMDB_IMG_URL}${props.movie.poster_path}`}
       />
@@ -18,12 +21,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(MovieItem);
-
-{
-  /* {props.isAuthenticated && (
-        <div className='content-container'>
-          <button className='button'>Add to Wishlist</button>
-          <button className='button'>Add to Watched</button>
-        </div>
-      )} */
-}

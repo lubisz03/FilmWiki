@@ -8,7 +8,7 @@ const watchedMoviesReducer = (
     case 'ADD_WATCHED_MOVIE':
       return [...state, action.movie];
     case 'REMOVE_WATCHED_MOVIE':
-      return state.filter(({ name }) => name != name);
+      return state.filter(({ title }) => title != action.title);
     case 'SET_WATCHED_MOVIES':
       return action.movies;
     default:
