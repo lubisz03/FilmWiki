@@ -21,6 +21,7 @@ import {
   startAddWatchedMovie,
   startRemoveWatchedMovie,
 } from '../actions/watchedMovies';
+import { closeModal } from '../actions/modal';
 
 const Details = (props) => {
   return (
@@ -41,7 +42,6 @@ const Details = (props) => {
             {props.data.title}
           </Heading>
         </ModalHeader>
-        <ModalCloseButton backgroundColor='red' />
         <ModalBody color='white'>
           <Image
             objectFit='cover'
@@ -104,6 +104,12 @@ const Details = (props) => {
               </Button>
             )
           )}
+          <Button
+            colorScheme='red'
+            mr={3}
+            onClick={() => props.dispatch(closeModal())}>
+            CLOSE
+          </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>
