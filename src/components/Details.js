@@ -22,6 +22,7 @@ import {
   startRemoveWatchedMovie,
 } from '../actions/watchedMovies';
 import { closeModal } from '../actions/modal';
+import moment from 'moment/moment';
 
 const Details = (props) => {
   return (
@@ -31,6 +32,7 @@ const Details = (props) => {
       size='xl'
       scrollBehavior='outside'
       p='1.2rem 0'
+      autoFocus={false}
       isCentered>
       <ModalOverlay
         bg='blackAlpha.300'
@@ -55,17 +57,24 @@ const Details = (props) => {
           <Heading as='h3' size='lg' color='red' mt='1.2rem'>
             Release Date
           </Heading>
-          <Text mt='0.6rem'>{props.data.release_date}</Text>
+          <Text mt='0.6rem'>
+            {moment(props.data.release_date).format('Do MMMM YYYY')}
+          </Text>
           <Heading as='h3' size='lg' color='red' mt='1.2rem'>
             Rating
           </Heading>
-          <Text mt='0.6rem'>{props.data.vote_average}</Text>
+          <Text mt='0.6rem'>
+            {parseFloat(props.data.vote_average).toFixed(1)}
+          </Text>
         </ModalBody>
         <ModalFooter>
           {props.watched && props.isAuthenticated ? (
             <Button
               colorScheme='red'
               mr={3}
+              size='lg'
+              color='black'
+              _hover={{ color: 'white' }}
               onClick={() =>
                 props.dispatch(startRemoveWatchedMovie(props.data))
               }>
@@ -76,6 +85,9 @@ const Details = (props) => {
               <Button
                 colorScheme='green'
                 mr={3}
+                size='lg'
+                color='black'
+                _hover={{ color: 'white' }}
                 onClick={() =>
                   props.dispatch(startAddWatchedMovie(props.data))
                 }>
@@ -87,6 +99,9 @@ const Details = (props) => {
             <Button
               colorScheme='red'
               mr={3}
+              size='lg'
+              color='black'
+              _hover={{ color: 'white' }}
               onClick={() =>
                 props.dispatch(startRemoveWishlistedMovie(props.data))
               }>
@@ -97,6 +112,9 @@ const Details = (props) => {
               <Button
                 colorScheme='green'
                 mr={3}
+                size='lg'
+                color='black'
+                _hover={{ color: 'white' }}
                 onClick={() =>
                   props.dispatch(startAddWishlistedMovie(props.data))
                 }>
@@ -107,8 +125,11 @@ const Details = (props) => {
           <Button
             colorScheme='red'
             mr={3}
+            size='lg'
+            color='black'
+            _hover={{ color: 'white' }}
             onClick={() => props.dispatch(closeModal())}>
-            CLOSE
+            Close
           </Button>
         </ModalFooter>
       </ModalContent>

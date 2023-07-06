@@ -17,16 +17,25 @@ import {
 import { createBrowserHistory } from 'history';
 import { firebase } from './firebase/firebase';
 import { login, logout } from './actions/auth';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { startSetWishlistedMovies } from './actions/wishlistedMovies';
 import { startSetWatchedMovies } from './actions/watchedMovies';
+import { Fonts } from './fonts/Fonts';
 
 const store = configureStore();
 const history = createBrowserHistory();
 
+const theme = extendTheme({
+  fonts: {
+    heading: 'Bitter',
+    body: 'Bitter',
+    footer: 'Bitter',
+  },
+});
+
 const jsx = (
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Provider store={store}>
         <AppRouter />
       </Provider>
