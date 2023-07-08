@@ -13,6 +13,8 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
       return { ...state, sortBy: 'rating' };
     case 'SORT_BY_ALPHABET':
       return { ...state, sortBy: 'alphabet' };
+    case 'SORT_BY_POPULARITY':
+      return { ...state, sortBy: 'popularity' };
     case 'SET_GENRE':
       return { ...state, genre: action.genre };
     default:

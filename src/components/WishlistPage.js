@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { setTextFilter } from '../actions/filters';
+import { setTextFilter, sortByAlphabet } from '../actions/filters';
 import { connect } from 'react-redux';
 import MoviesList from './MoviesList';
 import { setMovies } from '../actions/movies';
@@ -8,6 +8,7 @@ import { handleStartLoading, handleStopLoading } from '../actions/loading';
 const WishlistPage = (props) => {
   useEffect(() => {
     props.dispatch(handleStartLoading());
+    props.dispatch(sortByAlphabet());
     props.dispatch(setMovies(props.wishlist));
     props.dispatch(handleStopLoading());
     props.dispatch(setTextFilter(''));

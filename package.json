@@ -7,7 +7,8 @@
     "test": "jest --env=jsdom --config=jest.config.js --watchAll",
     "start": "webpack-dev-server",
     "server": "npm run build && node server/server.js",
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "firebase deploy"
   },
   "author": "Antoni Łubisz",
   "license": "MIT",

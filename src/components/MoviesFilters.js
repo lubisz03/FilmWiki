@@ -1,6 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { sortByRating, sortByAlphabet } from '../actions/filters';
+import {
+  sortByRating,
+  sortByAlphabet,
+  sortByPopularity,
+} from '../actions/filters';
 import { toggleSort } from '../actions/dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -36,6 +40,26 @@ const MoviesFilters = (props) => {
               Alphabet
             </li>
           )}
+          {props.filters.sortBy === 'popularity' ? (
+            <li
+              value='popularity'
+              onClick={() => {
+                props.dispatch(sortByPopularity());
+                props.dispatch(toggleSort());
+              }}>
+              Popularity&nbsp;&nbsp;&nbsp;
+              <FontAwesomeIcon icon={faCheck} />
+            </li>
+          ) : (
+            <li
+              value='popularity'
+              onClick={() => {
+                props.dispatch(sortByPopularity());
+                props.dispatch(toggleSort());
+              }}>
+              Popularity
+            </li>
+          )}
           {props.filters.sortBy === 'rating' ? (
             <li
               value='rating'
@@ -56,7 +80,6 @@ const MoviesFilters = (props) => {
               Rating
             </li>
           )}
-          {}
         </ul>
       )}
     </div>

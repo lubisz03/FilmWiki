@@ -30,7 +30,6 @@ const DropdownGenre = (props) => {
           {props.genres.map((genre) => (
             <Link key={genre.id} to={`/genre/${genre.id}`}>
               <li
-                backgroundColor='black'
                 onClick={() => {
                   props.dispatch(setGenre(genre.name));
                   props.dispatch(toggleNav());

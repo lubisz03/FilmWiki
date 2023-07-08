@@ -1,5 +1,3 @@
-import { faL } from '@fortawesome/free-solid-svg-icons';
-
 const dropdownReducerDefaultState = {
   nav: false,
   genres: false,
@@ -9,6 +7,8 @@ const dropdownReducerDefaultState = {
 
 const dropdownReducer = (state = dropdownReducerDefaultState, action) => {
   switch (action.type) {
+    case 'CLOSE_ALL':
+      return { nav: false, genres: false, account: false, sort: false };
     case 'TOGGLE_NAV':
       if (state.nav === true) {
         return { nav: false, genres: false, account: false, sort: false };

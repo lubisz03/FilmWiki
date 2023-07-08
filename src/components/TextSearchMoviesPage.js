@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom';
 import { setMovies } from '../actions/movies';
 import { connect } from 'react-redux';
 import MoviesList from './MoviesList';
-import { setTextFilter } from '../actions/filters';
+import { setTextFilter, sortByAlphabet } from '../actions/filters';
 
 const TextSearchMoviesPage = (props) => {
   const x = useParams().text;
   useEffect(() => {
+    props.dispatch(sortByAlphabet());
     fetch(
       `${process.env.REACT_APP_TMDB_URL}search/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&query=${x}&include_adult=false`
     )

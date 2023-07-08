@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { setTextFilter } from '../actions/filters';
+import { setTextFilter, sortByAlphabet } from '../actions/filters';
 import { connect } from 'react-redux';
 import { setMovies } from '../actions/movies';
 import MoviesList from './MoviesList';
@@ -8,15 +8,12 @@ import { handleStartLoading, handleStopLoading } from '../actions/loading';
 const UpcomingPage = (props) => {
   useEffect(() => {
     props.dispatch(handleStartLoading());
-    fetch(
-      `${process.env.REACT_APP_TMDB_URL}movie/upcoming?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        props.dispatch(setMovies(data.results));
-        props.dispatch(handleStopLoading());
-      })
-      .catch((err) => console.log(err));
+    props.dispatch(setMovies([]));
+    props.dispatch(sortByAlphabet());
+    for (let i = 1; i <= 3; i++) {
+      props.getData('movie/upcoming', i);
+    }
+    props.dispatch(handleStopLoading());
     props.dispatch(setTextFilter(''));
   }, []);
 

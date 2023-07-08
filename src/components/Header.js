@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
-import { toggleNav } from '../actions/dropdown';
+import { closeAll, toggleNav } from '../actions/dropdown';
 import DropdownAccount from './DropdownAccount';
 import TextSearch from './TextSearch';
 import DropdownGenres from './DropdownGenres';
@@ -12,7 +12,11 @@ const Header = (props) => {
   return (
     <header className='header'>
       <div className='content-container header-container'>
-        <Link to='/'>
+        <Link
+          to='/'
+          onClick={() => {
+            props.dispatch(closeAll());
+          }}>
           <h1>
             Film<span>Wiki</span>
           </h1>

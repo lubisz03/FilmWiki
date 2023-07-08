@@ -14,6 +14,11 @@ export const sortByAlphabet = () => ({
   type: 'SORT_BY_ALPHABET',
 });
 
+// Sort by popularity
+export const sortByPopularity = () => ({
+  type: 'SORT_BY_POPULARITY',
+});
+
 // Set genre name
 export const setGenre = (genre) => ({
   type: 'SET_GENRE',

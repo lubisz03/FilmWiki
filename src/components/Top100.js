@@ -1,22 +1,19 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { setMovies } from '../actions/movies';
+import { addMovies, setMovies } from '../actions/movies';
 import MoviesList from './MoviesList';
-import { setTextFilter } from '../actions/filters';
+import { setTextFilter, sortByRating } from '../actions/filters';
 import { handleStopLoading, handleStartLoading } from '../actions/loading';
 
 const Top100 = (props) => {
   useEffect(() => {
     props.dispatch(handleStartLoading());
-    fetch(
-      `${process.env.REACT_APP_TMDB_URL}movie/top_rated?api_key=${process.env.REACT_APP_TMDB_API_KEY}&page=5`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        props.dispatch(setMovies(data.results));
-        props.dispatch(handleStopLoading());
-      })
-      .catch((err) => console.log(err));
+    props.dispatch(setMovies([]));
+    props.dispatch(sortByRating());
+    for (let i = 1; i <= 5; i++) {
+      props.getData('movie/top_rated', i);
+    }
+    props.dispatch(handleStopLoading());
     props.dispatch(setTextFilter(''));
   }, []);
 
