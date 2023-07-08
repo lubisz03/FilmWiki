@@ -7,7 +7,7 @@
       "**/node_modules/**",
       ".env.development"
     ],
-    "redirects": [
+    "rewrites": [
       {
         "source": "**",
         "destination": "/"
