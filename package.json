@@ -2,12 +2,13 @@
   "name": "FilmWiki",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./src/app.js",
   "scripts": {
-    "test": "jest --env=jsdom --config=jest.config.js --watchAll",
-    "start": "webpack-dev-server",
+    "test": "cross-env NODE_ENV=test jest --env=jsdom --config=jest.config.js --watchAll",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "server": "npm run build && node server/server.js",
-    "build": "webpack",
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack --config webpack.dev.js --watch",
     "deploy": "firebase deploy"
   },
   "author": "Antoni Łubisz",
@@ -38,9 +39,7 @@
     "redux-thunk": "^2.4.2",
     "sass-loader": "^13.3.0",
     "style-loader": "^3.3.3",
-    "uuid": "^9.0.0",
-    "webpack": "^5.84.1",
-    "webpack-cli": "^5.1.1"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -50,6 +49,10 @@
     "firebase": "^9.22.1",
     "html-webpack-plugin": "^5.5.1",
     "jest": "^29.5.0",
-    "webpack-dev-server": "^4.15.0"
+    "jest-environment-jsdom": "^29.6.1",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.0",
+    "webpack-merge": "^5.9.0"
   }
 }

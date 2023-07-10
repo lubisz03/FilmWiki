@@ -27,6 +27,7 @@ const TrendingPage = (props) => {
 
 const mapsStateToProps = (state) => {
   return {
+    movies: state.movies,
     isLoading: state.loading,
   };
 };

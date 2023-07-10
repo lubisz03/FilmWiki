@@ -17,7 +17,11 @@ const WishlistPage = (props) => {
   if (props.isLoading) {
     return <LoadingPage />;
   } else {
-    return <MoviesList />;
+    if (props.wishlist.length) {
+      return <MoviesList />;
+    } else {
+      return <h1 className='no-movies'>no movies to display...</h1>;
+    }
   }
 };
 

@@ -23,6 +23,8 @@ import {
 } from '../actions/watchedMovies';
 import { closeModal } from '../actions/modal';
 import moment from 'moment/moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Details = (props) => {
   return (
@@ -73,8 +75,8 @@ const Details = (props) => {
               colorScheme='red'
               mr={3}
               size='lg'
-              color='black'
-              _hover={{ color: 'white' }}
+              fontFamily='inherit'
+              color='white'
               onClick={() =>
                 props.dispatch(startRemoveWatchedMovie(props.data))
               }>
@@ -86,8 +88,8 @@ const Details = (props) => {
                 colorScheme='green'
                 mr={3}
                 size='lg'
-                color='black'
-                _hover={{ color: 'white' }}
+                fontFamily='inherit'
+                color='white'
                 onClick={() =>
                   props.dispatch(startAddWatchedMovie(props.data))
                 }>
@@ -100,8 +102,8 @@ const Details = (props) => {
               colorScheme='red'
               mr={3}
               size='lg'
-              color='black'
-              _hover={{ color: 'white' }}
+              fontFamily='inherit'
+              color='white'
               onClick={() =>
                 props.dispatch(startRemoveWishlistedMovie(props.data))
               }>
@@ -113,8 +115,8 @@ const Details = (props) => {
                 colorScheme='green'
                 mr={3}
                 size='lg'
-                color='black'
-                _hover={{ color: 'white' }}
+                fontFamily='inherit'
+                color='white'
                 onClick={() =>
                   props.dispatch(startAddWishlistedMovie(props.data))
                 }>
@@ -126,10 +128,11 @@ const Details = (props) => {
             colorScheme='red'
             mr={3}
             size='lg'
-            color='black'
-            _hover={{ color: 'white' }}
+            fontFamily='inherit'
+            fontWeight='bold'
+            color='white'
             onClick={() => props.dispatch(closeModal())}>
-            Close
+            <FontAwesomeIcon icon={faXmark} />
           </Button>
         </ModalFooter>
       </ModalContent>

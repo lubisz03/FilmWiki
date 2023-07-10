@@ -6,6 +6,7 @@ import {
   NavLink,
   Router,
   BrowserRouter,
+  Navigate,
   useNavigate,
   Outlet,
 } from 'react-router-dom';
@@ -21,6 +22,7 @@ import TextSearchMoviesPage from '../components/TextSearchMoviesPage';
 import WatchedPage from '../components/WatchedPage';
 import WishlistPage from '../components/WishlistPage';
 import Details from '../components/Details';
+import NotFoundPage from '../components/NotFoundPage';
 import { closeModal } from '../actions/modal';
 import { addMovies } from '../actions/movies';
 
@@ -120,6 +122,7 @@ const AppRouter = (props) => {
               </PrivateRoute>
             }
           />
+          <Route path='*' element={<Navigate to='/' />} />
         </Routes>
       </div>
     </BrowserRouter>
@@ -129,7 +132,7 @@ const AppRouter = (props) => {
 const mapStateToProps = (state) => {
   return {
     textFilter: state.filters.text,
-    genre: state.filters.genre,
+    genre: state.genres.genre,
     isOpen: state.modal.isOpen,
     modalData: state.modal.data,
   };

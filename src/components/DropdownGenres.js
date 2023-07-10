@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { startLogin, startLogout } from '../actions/auth';
-import { setGenres } from '../actions/genres';
-import { setGenre } from '../actions/filters';
+import { setGenres, setGenre } from '../actions/genres';
 import { toggleGenres, toggleNav } from '../actions/dropdown';
 
 const DropdownGenre = (props) => {
@@ -46,7 +44,7 @@ const DropdownGenre = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    genres: state.genres,
+    genres: state.genres.genres,
     isGenres: state.dropdown.genres,
   };
 };

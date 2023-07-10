@@ -1,4 +1,4 @@
-const loadingReducerDefaultState = true;
+const loadingReducerDefaultState = false;
 
 const loadingReducer = (state = loadingReducerDefaultState, action) => {
   switch (action.type) {

@@ -18,9 +18,3 @@ export const sortByAlphabet = () => ({
 export const sortByPopularity = () => ({
   type: 'SORT_BY_POPULARITY',
 });
-
-// Set genre name
-export const setGenre = (genre) => ({
-  type: 'SET_GENRE',
-  genre,
-});

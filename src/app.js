@@ -34,13 +34,11 @@ const theme = extendTheme({
 });
 
 const jsx = (
-  <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <Provider store={store}>
-        <AppRouter />
-      </Provider>
-    </ChakraProvider>
-  </React.StrictMode>
+  <ChakraProvider theme={theme}>
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
+  </ChakraProvider>
 );
 const root = ReactDOM.createRoot(document.getElementById('app'));
 
