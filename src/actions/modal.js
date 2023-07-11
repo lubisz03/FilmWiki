@@ -8,8 +8,8 @@ export const openModal = (movie, watched, wishlisted) => ({
 
 export const startOpenModal = (movie) => {
   return (dispatch, getState) => {
-    const watchedMovies = getState().watchedMovies;
-    const wishlistedMovies = getState().wishlistedMovies;
+    const watchedMovies = getState().movies.watchedMovies;
+    const wishlistedMovies = getState().movies.wishlistedMovies;
 
     let watchedTitles = [];
     let wishlistedTitles = [];
