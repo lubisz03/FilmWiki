@@ -16,7 +16,7 @@ const MoviesList = (props) => {
 
 const mapsStateToProps = (state) => {
   return {
-    movies: selectMovies(state.movies, state.filters),
+    movies: selectMovies(state.movies.movies, state.filters),
   };
 };
 

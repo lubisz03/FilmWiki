@@ -28,8 +28,8 @@ const WishlistPage = (props) => {
 const mapsStateToProps = (state) => {
   return {
     isLoading: state.loading,
-    watched: state.watchedMovies,
-    wishlist: state.wishlistedMovies,
+    watched: state.movies.watchedMovies,
+    wishlist: state.movies.wishlistedMovies,
   };
 };
 
