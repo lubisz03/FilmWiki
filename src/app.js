@@ -18,8 +18,10 @@ import { createBrowserHistory } from 'history';
 import { firebase } from './firebase/firebase';
 import { login, logout } from './actions/auth';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import { startSetWishlistedMovies } from './actions/wishlistedMovies';
-import { startSetWatchedMovies } from './actions/watchedMovies';
+import {
+  startSetWishlistedMovies,
+  startSetWatchedMovies,
+} from './actions/movies';
 import { Fonts } from './fonts/Fonts';
 
 const store = configureStore();

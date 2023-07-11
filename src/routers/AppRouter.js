@@ -22,7 +22,6 @@ import TextSearchMoviesPage from '../components/TextSearchMoviesPage';
 import WatchedPage from '../components/WatchedPage';
 import WishlistPage from '../components/WishlistPage';
 import Details from '../components/Details';
-import NotFoundPage from '../components/NotFoundPage';
 import { closeModal } from '../actions/modal';
 import { addMovies } from '../actions/movies';
 

@@ -14,13 +14,11 @@ import {
 } from '@chakra-ui/react';
 import { connect } from 'react-redux';
 import {
-  startAddWishlistedMovie,
-  startRemoveWishlistedMovie,
-} from '../actions/wishlistedMovies';
-import {
   startAddWatchedMovie,
   startRemoveWatchedMovie,
-} from '../actions/watchedMovies';
+  startAddWishlistedMovie,
+  startRemoveWishlistedMovie,
+} from '../actions/movies';
 import { closeModal } from '../actions/modal';
 import moment from 'moment/moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
