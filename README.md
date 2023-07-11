@@ -6,21 +6,25 @@ in progress...
 
 ## Screenshots:
 **_Trending Movies:_**
+
 ![](/screenshots/trending-movies.png)
 
 
 
 **_Genres:_**
-![](/screenshots/genres-search.png)
+
+![](/screenshots/genre-search.png)
 
 
 
 **_Watched Movies:_**
+
 ![](/screenshots/watched-movies.png)
 
 
 
 **_Movie Details (Modal):_**
+
 ![](/screenshots/movie-details.png)
 
 ## Technologies:
