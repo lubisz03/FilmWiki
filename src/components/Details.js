@@ -38,7 +38,7 @@ const Details = (props) => {
         bg='blackAlpha.300'
         backdropFilter='blur(10px) hue-rotate(90deg)'
       />
-      <ModalContent backgroundColor='black'>
+      <ModalContent backgroundColor='black' fontFamily='Bitter'>
         <ModalHeader color='red'>
           <Heading as='h3' size='lg'>
             {props.data.title}
@@ -73,7 +73,7 @@ const Details = (props) => {
               colorScheme='red'
               mr={3}
               size='lg'
-              fontFamily='inherit'
+              fontFamily='Bitter'
               color='white'
               onClick={() =>
                 props.dispatch(startRemoveWatchedMovie(props.data))
@@ -86,7 +86,7 @@ const Details = (props) => {
                 colorScheme='green'
                 mr={3}
                 size='lg'
-                fontFamily='inherit'
+                fontFamily='Bitter'
                 color='white'
                 onClick={() =>
                   props.dispatch(startAddWatchedMovie(props.data))
@@ -100,7 +100,7 @@ const Details = (props) => {
               colorScheme='red'
               mr={3}
               size='lg'
-              fontFamily='inherit'
+              fontFamily='Bitter'
               color='white'
               onClick={() =>
                 props.dispatch(startRemoveWishlistedMovie(props.data))
@@ -113,7 +113,7 @@ const Details = (props) => {
                 colorScheme='green'
                 mr={3}
                 size='lg'
-                fontFamily='inherit'
+                fontFamily='Bitter'
                 color='white'
                 onClick={() =>
                   props.dispatch(startAddWishlistedMovie(props.data))
@@ -126,7 +126,7 @@ const Details = (props) => {
             colorScheme='red'
             mr={3}
             size='lg'
-            fontFamily='inherit'
+            fontFamily='Bitter'
             fontWeight='bold'
             color='white'
             onClick={() => props.dispatch(closeModal())}>
