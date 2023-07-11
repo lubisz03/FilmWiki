@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "moviesapp-3d355"
+    "default": "moviesapp-3d355",
+    "prod": "moviesapp-3d355",
+    "dev": "moviesapp-3d355"
   }
 }
