@@ -9,7 +9,6 @@ const MovieItem = (props) => {
       onClick={() => props.dispatch(startOpenModal(props.movie))}>
       <img
         src={`${process.env.REACT_APP_TMDB_IMG_URL}${props.movie.poster_path}`}
-        onload={() => props.dispatch(handleLoadedImage(1))}
       />
       <p>{props.movie.title}</p>
     </div>
