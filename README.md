@@ -28,4 +28,5 @@ FilmWiki is a responsive ReactJS-based website that allows users to dive deep in
 - SCSS :white_check_mark:
 - ChakraUI :white_check_mark:
 - ReactJS + Redux :white_check_mark:
+- [The Movies Database API](https://www.themoviedb.org/documentation/api) :white_check_mark: 
 - Firebase :white_check_mark:
